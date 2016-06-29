@@ -1,2 +1,0 @@
-# LLG_core
-core
