@@ -14,6 +14,7 @@ import java.util.Date;
 public class Launcher {
 
 	public static void main(String...strings) {
+		ZipUtils.saveCodeInHistory();
 
 //		double theta = Math.PI / 4;
 //		double phi = 0;
@@ -68,7 +69,7 @@ public class Launcher {
 
 		double angleStep = 0.1;
 		double fi = 0;
-		double h = 0.1;
+		double h = 0.3;
 		ArrayList<ArrayList<Double>> list_all = new ArrayList<>();
 
 		//for (double fi = angleStep; fi < 1; fi = round(fi + angleStep, 2))
@@ -104,7 +105,7 @@ public class Launcher {
 				i++;
 			}
 		}
-		TextWriter.writeDoubleList(energy_list, "GREAT SHIT");
+		TextWriter.writeDoubleList(energy_list, "Average energy_ h = " + h);
 
 	}
 
