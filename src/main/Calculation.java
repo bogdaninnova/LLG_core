@@ -13,8 +13,11 @@ public abstract class Calculation {
 
 	public static final double sigma = 0 * Math.pow(10, 18);
 	public static final double nu = 0 * Math.pow(10, 18);//TODO find AHE koeff
+	private static final double alpha0 = 1 * Math.pow(10, -2);
 
-	private static final double alpha0 = 0.01;
+	public static final boolean IS_CONDUCTICE_LLG = true;
+
+
 	protected static final double R = Math.pow(10, -5);
 	protected static final double V = (4/3) * Math.PI * Math.pow(R, 3);
 	protected static final double mu1 = 1;
@@ -30,8 +33,11 @@ public abstract class Calculation {
 
 	protected static final double taoSigma = getTaoSigma();
 	protected static final double taoAnomal = getTaoAnomal();
-
 	protected static final double ALPHA = alpha0 + getAlphaSigma();
+
+
+
+
 	protected static final double constant = -1 / (Math.pow(1 - ksi, 2) + Math.pow(ALPHA, 2));
 
 
