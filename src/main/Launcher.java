@@ -67,22 +67,25 @@ public class Launcher {
 //		TextWriter.writeDoubleList(list, "TXT Coordinates");
 
 
-		double angleStep = 0.1;
+		double angleStep = 0.05;
 		double fi = 0;
-		double h = 0.3;
+		double h = 0.2;
 		ArrayList<ArrayList<Double>> list_all = new ArrayList<>();
-
+		//double teta = 0;
 		//for (double fi = angleStep; fi < 1; fi = round(fi + angleStep, 2))
-			for (double teta = angleStep; teta < 1; teta = round(teta + angleStep, 1)) {
+			for (double teta = angleStep; teta < 1; teta = round(teta + angleStep, 2)) {
 				double angleTheta = Math.acos(2 * teta - 1);
 				double angleFi = 2 * Math.PI * fi;
 				ArrayList<Double> energy_list = new ArrayList<>();
 
 				System.out.println(new Date());
+				System.out.println(Calculation.IS_ALPHA +
+						"" + Calculation.IS_SIGMA +
+						"" + Calculation.IS_NU);
 				System.out.println("teta="+teta);
 				System.out.println();
 
-				for (double w = 0.1; w <= 2; w = round(w + 0.1, 1)) {
+				for (double w = 0.01; w <= 3; w = round(w + 0.01, 2)) {
 					CartesianCalculation c = new CartesianCalculation(
 							new Anisotropy(angleTheta, angleFi),
 							new Circular(w, h)
@@ -94,7 +97,7 @@ public class Launcher {
 			}
 
 		ArrayList<Double> energy_list = new ArrayList<>();
-		for (int i = 0; i <= 500; i++)
+		for (int i = 0; i < 310; i++)
 			energy_list.add(0d);
 
 
@@ -105,8 +108,11 @@ public class Launcher {
 				i++;
 			}
 		}
-		TextWriter.writeDoubleList(energy_list, "Average energy_ h = " + h);
-
+		TextWriter.writeDoubleList(energy_list,
+				"(" + Calculation.IS_ALPHA +
+						"" + Calculation.IS_SIGMA +
+						"" + Calculation.IS_NU +
+						")final");
 	}
 
 

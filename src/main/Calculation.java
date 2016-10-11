@@ -11,9 +11,15 @@ public abstract class Calculation {
 	protected ArrayList<Vector> array = new ArrayList<>();
 	protected PeriodCounter pc = new PeriodCounter();
 
-	public static final double sigma = 0 * Math.pow(10, 18);
-	public static final double nu = 0 * Math.pow(10, 18);//TODO find AHE koeff
-	private static final double alpha0 = 1 * Math.pow(10, -2);
+
+	public static final int IS_ALPHA = 0;
+	public static final int IS_SIGMA = 0;
+	public static final int IS_NU	 = 1;
+
+
+	public static final double sigma = IS_SIGMA * Math.pow(10, 18);
+	public static final double nu = IS_NU * Math.pow(10, 18);//TODO find AHE koeff
+	private static final double alpha0 = IS_ALPHA * Math.pow(10, -2);
 
 	public static final boolean IS_CONDUCTICE_LLG = true;
 
